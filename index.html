@@ -2,77 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Bali Spa - Premium Men's Spa Services</title>
-    <meta name="description" content="Rejuvenation for men by men. Luxury spa treatments including Swedish, Deep Tissue, and Balinese massages.">
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Luxe Bali Men Spa - Premium Relaxation</title>
+    <meta name="description" content="Premium men's spa experience offering relaxation and rejuvenation">
+    <meta name="author" content="Luxe Bali Men Spa">
+    
+    <meta property="og:title" content="Luxe Bali Men Spa - Premium Relaxation">
+    <meta property="og:description" content="Premium men's spa experience offering relaxation and rejuvenation">
+    <meta property="og:type" content="website">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <!-- Touch icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
-    <header class="header">
-        <div class="container header__container">
-            <a href="index.html" class="logo">Luxe Bali Spa</a>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link active">HOME</a></li>
-                    <li class="nav__item"><a href="about.html" class="nav__link">ABOUT</a></li>
-                    <li class="nav__item"><a href="services.html" class="nav__link">SERVICES</a></li>
-                    <li class="nav__item"><a href="contact.html" class="nav__link">CONTACT</a></li>
-                    <li class="nav__item"><a href="booking.html" class="nav__link">BOOK NOW</a></li>
-                </ul>
-                <div class="nav__mobile-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <main>
+    <main class="main">
         <section class="hero">
-            <img src="assets/images/Spa.webp" alt="" class="hero__img">
+            <div class="hero-bg">
+                <div class="bg-slide active" style="background-image: url('img/hero1.jpg')"></div>
+                <div class="bg-slide" style="background-image: url('img/hero2.png')"></div>
+                <div class="bg-slide" style="background-image: url('img/hero3.jpg')"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <header class="header">
+                <div class="logo">
+                    <span class="name1">Luxe Bali</span>
+                    <span class="name2">Men Spa</span>
+                </div>
+                <nav class="navigation">
+                    <ul class="navlist">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Book Now</a></li>
+                    </ul>
+                    <div class="menu-toggle">
+                        <div class="hamburger"></div>
+                    </div>
+                </nav>
+            </header>
+            <div class="hero-content">
+                <span>Premium Men's Spa Experience</span>
+                <h1>Luxe Bali Men Spa</h1>
+                <p class="slogan">Your luxury spa experience awaits</p>
+                <button class="hero-btn">Book Now</button>
+            </div>
+            <!-- Wave shape at bottom -->
+            <div class="wave-shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,128L40,154.7C80,181,160,235,240,250.7C320,267,400,245,480,213.3C560,181,640,139,720,117.3C800,96,880,96,960,117.3C1040,139,1120,181,1200,181.3C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+                </svg>
+            </div>
         </section>
-        
-        <section class="features">
-    <div class="features__container1">
-        <div class="box1">
-            <h1>Massage <br>Therapy <br>Center</h1>
-            <p>You deserve better than a rushed massage <br>by a rookie therapist in a place that makes <br>you feel more stressed.</p>
-        </div>
-        <div class="box2">
-            <div class="feature__card">
-                <div class="feature__icon">
-                    <img src="assets/images/card1.jpg" alt="Premium Treatments">
-                </div>
-                <h3 class="feature__title">Premium Treatments</h3>
-            </div>
-            <div class="feature__card">
-                <div class="feature__icon">
-                    <img src="assets/images/card3.jpg" alt="Holistic Approach">
-                </div>
-                <h3 class="feature__title">Holistic Approach</h3>
-            </div>
-            <div class="feature__card">
-                <div class="feature__icon">
-                    <img src="assets/images/card2.jpg" alt="Men's Specialists">
-                </div>
-                <h3 class="feature__title">Men's Specialists</h3>
-            </div>
-        </div>
-    </div>
-    <div class="features__container2">
-        <h1>Body and Mind</h1>
-        <p>A spa is a location where mineral-rich spring water (and sometimes seawater) is used to give medicinal baths. Spa towns or spa resorts (including hot springs resorts) typically offer various health treatments, which are also known as balneotherapy. The belief in the curative powers of mineral waters goes back to prehistoric times. Such practices have been popular worldwide, but are especially widespread in Europe and Japan. Day spas are also quite popular and offer various personal care treatments that you can also find at our Body and Mind Therapy Center.</p>
-        <img src="assets/images/img-10.png" alt="">
-    </div>
-</section>
+        <section class="about">
+            <i class="fa-brands fa-pagelines"></i>
+            <h2>About Us</h2>
+            <p>Welcome to Luxe Bali Men Spa, where we offer a unique and luxurious spa experience tailored specifically for men. Our skilled therapists are dedicated to providing the highest level of service in a serene and relaxing environment.</p>
+            <button class="about-btn">Learn More</button>
+        </section>
     </main>
 
-    <script src="js/global.js"></script>
-    <script src="js/home.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

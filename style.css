@@ -1,0 +1,483 @@
+:root {
+    --color1: #63464b;
+    --color2: #a99492;
+    --color3: #ffffff;
+    --color4: #cfc9c9;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+}
+
+* {
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-poppins);
+    background-color: var(--color3);
+    color: var(--color1);
+    overflow-x: hidden;
+}
+
+.main {
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 110vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.bg-slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color3);
+    font-family: var(--font-poppins);
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.name1 {
+    font-size: 1.2em;
+}
+
+.name2 {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navlist {
+    display: flex;
+    gap: 30px;
+}
+
+.navlist a {
+    color: var(--color3);
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.navlist a:hover {
+    color: var(--color2);
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 100;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: var(--color3);
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.hamburger:before {
+    top: -8px;
+}
+
+.hamburger:after {
+    top: 8px;
+}
+
+/* Active state for hamburger */
+.menu-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.menu-toggle.active .hamburger:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .navlist {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color1);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: all 0.5s ease;
+        z-index: 90;
+        padding-top: 80px;
+    }
+    
+    .navlist.active {
+        right: 0;
+    }
+    
+    .navlist li a {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+    }
+    
+    /* Overlay when menu is open */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 80;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.hero-btn {
+    background-color: var(--color3);
+    color: var(--color1);
+    border: none;
+    padding: 15px 40px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    text-align: center;
+    color: var(--color3);
+    padding: 0 20px;
+}
+
+.hero-content span {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--color3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: var(--font-playfair);
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .slogan {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Wave Bottom Shape */
+.wave-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 5;
+}
+
+.wave-shape svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* About Section */
+.about {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--color3);
+}
+
+.about i{
+    font-size: 50px;
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--color1);
+    font-family: var(--font-playfair);
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: var(--color1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-btn {
+    background-color: var(--color1);
+    color: var(--color3);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.about-btn:hover {
+    background-color: var(--color2);
+    color: var(--color1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .wave-shape {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content span {
+        font-size: 14px;
+    }
+    
+    .hero-content .slogan {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .about {
+        padding: 80px 20px;
+    }
+    
+    .about h2 {
+        font-size: 2rem;
+    }
+    
+    .wave-shape {
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content span {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .hero-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .about {
+        padding: 60px 15px;
+    }
+    
+    .about h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .about p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .wave-shape {
+        height: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content .slogan {
+        font-size: 0.9rem;
+    }
+    
+    .about h2 {
+        font-size: 1.6rem;
+    }
+    
+    .about-btn {
+        padding: 10px 25px;
+    }
+    
+    .wave-shape {
+        height: 50px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        padding: 100px 20px;
+        height: auto;
+    }
+    
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .wave-shape {
+        height: 60px;
+    }
+}
