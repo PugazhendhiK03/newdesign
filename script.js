@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hero Image Slideshow
     const slides = document.querySelectorAll('.bg-slide');
     let currentSlide = 0;
     let touchStartX = 0;
     let touchEndX = 0;
     let slideInterval;
     
-    // Initialize slideshow
     function initSlideshow() {
-        // Clear any existing interval
         clearInterval(slideInterval);
         
-        // Change slide every 5 seconds
         slideInterval = setInterval(() => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
@@ -18,23 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
     
-    // Next slide function
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
-        initSlideshow(); // Reset timer
+        initSlideshow();
     }
     
-    // Previous slide function
     function prevSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         slides[currentSlide].classList.add('active');
-        initSlideshow(); // Reset timer
+        initSlideshow();
     }
     
-    // Touch events for mobile swipe
+    // Touch events for hero slider
     const heroBg = document.querySelector('.hero-bg');
     if (heroBg) {
         heroBg.addEventListener('touchstart', function(e) {
@@ -48,21 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: true });
     }
     
-    // Handle swipe gestures
     function handleSwipe() {
         if (touchEndX < touchStartX - 50) {
-            // Swipe left - next slide
             nextSlide();
         } else if (touchEndX > touchStartX + 50) {
-            // Swipe right - previous slide
             prevSlide();
         } else {
-            // No significant swipe - restart slideshow
             initSlideshow();
         }
     }
     
-    // Pause slideshow when hovering (for devices with mouse)
+    // Pause slideshow when hovering
     if (window.matchMedia("(hover: hover)").matches && heroBg) {
         heroBg.addEventListener('mouseenter', function() {
             clearInterval(slideInterval);
@@ -85,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navList.classList.toggle('active');
         navOverlay.classList.toggle('active');
         
-        // Toggle body scroll when menu is open
         if (navList.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -101,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     });
     
-    // Close menu when clicking on a nav link (for single page navigation)
+    // Close menu when clicking on a nav link
     const navLinks = document.querySelectorAll('.navlist a');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
@@ -114,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Make buttons more accessible
+    // Button accessibility and effects
     const buttons = document.querySelectorAll('button');
     buttons.forEach(button => {
         button.addEventListener('keydown', function(e) {
@@ -142,6 +133,53 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Start the slideshow
+    // Testimonial Slider Functionality
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    let currentTestimonialIndex = 0;
+    let testimonialInterval;
+    
+    function showTestimonial(index) {
+        testimonialCards.forEach(card => card.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        testimonialCards[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentTestimonialIndex = index;
+    }
+    
+    function nextTestimonial() {
+        let nextIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
+        showTestimonial(nextIndex);
+    }
+    
+    function startTestimonialSlider() {
+        testimonialInterval = setInterval(nextTestimonial, 5000);
+    }
+    
+    function stopTestimonialSlider() {
+        clearInterval(testimonialInterval);
+    }
+    
+    // Dot navigation for testimonials
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            showTestimonial(index);
+            stopTestimonialSlider();
+            startTestimonialSlider();
+        });
+    });
+    
+    // Pause testimonial slider on hover
+    const testimonialContainer = document.querySelector('.testimonial-container');
+    if (testimonialContainer) {
+        testimonialContainer.addEventListener('mouseenter', stopTestimonialSlider);
+        testimonialContainer.addEventListener('mouseleave', startTestimonialSlider);
+    }
+    
+    // Initialize all sliders
     initSlideshow();
+    showTestimonial(0);
+    startTestimonialSlider();
 });

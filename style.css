@@ -308,6 +308,11 @@ body {
     background-color: var(--color3);
 }
 
+.section-header{
+    display: flex;
+    flex-direction: column;
+}
+
 .about i{
     font-size: 50px;
     color: var(--color1);
@@ -480,4 +485,234 @@ body {
     .wave-shape {
         height: 60px;
     }
+}
+
+
+
+
+
+/* Services Section */
+.services {
+    padding: 100px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header i {
+    font-size: 50px;
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--color1);
+    font-family: var(--font-playfair);
+    position: relative;
+    display: inline-block;
+}
+
+.underline {
+    height: 3px;
+    width: 80px;
+    background-color: var(--color1);
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--color3);
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 50px;
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--color1);
+    font-family: var(--font-playfair);
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--color1);
+}
+
+.service-line {
+    height: 2px;
+    width: 60px;
+    background-color: var(--color2);
+    margin: 0 auto 20px;
+}
+
+.service-price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+
+.service-btn {
+    background-color: var(--color1);
+    color: var(--color3);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.service-btn:hover {
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+
+
+
+/* Testimonials Section */
+.testimonials {
+    padding: 100px 20px;
+    background-color: var(--color3);
+    text-align: center;
+    position: relative;
+}
+
+.testimonial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.testimonial-card {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.testimonial-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-content::before {
+    content: '\201C';
+    font-family: Georgia, serif;
+    font-size: 60px;
+    color: var(--color2);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0.3;
+}
+
+.rating {
+    color: #FFD700;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color1);
+    margin-bottom: 30px;
+    font-style: italic;
+    position: relative;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--color2);
+}
+
+.client-details h4 {
+    font-size: 1.1rem;
+    color: var(--color1);
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.client-details span {
+    font-size: 0.9rem;
+    color: var(--color2);
+    text-align: left;
+    display: block;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color4);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: var(--color1);
 }
