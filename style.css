@@ -404,6 +404,9 @@ body {
     .wave-shape {
         height: 80px;
     }
+    .hero{
+        height: 95vh;
+    }
 }
 
 @media (max-width: 576px) {
