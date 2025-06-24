@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Responsive viewport settings -->
+    
+    <!-- SEO Meta Tags -->
     <title>Luxe Bali Men Spa - Premium Relaxation</title>
     <meta name="description" content="Premium men's spa experience offering relaxation and rejuvenation">
     <meta name="author" content="Luxe Bali Men Spa">
     
+    <!-- Open Graph Meta Tags for Social Sharing -->
     <meta property="og:title" content="Luxe Bali Men Spa - Premium Relaxation">
     <meta property="og:description" content="Premium men's spa experience offering relaxation and rejuvenation">
     <meta property="og:type" content="website">
     
+    <!-- Font Imports -->
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <!-- Touch icons -->
+    
+    <!-- iOS Web App Capabilities -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
+
 <body>
     <main class="main">
+        <!-- Hero Section -->
         <section class="hero">
+            <!-- Hero Background Container -->
             <div class="hero-bg">
-                <div class="bg-slide active" style="background-image: url('img/hero1.jpg')"></div>
-                <div class="bg-slide" style="background-image: url('img/hero2.png')"></div>
-                <div class="bg-slide" style="background-image: url('img/hero3.jpg')"></div>
+                <!-- Slide 1 (Active by default) -->
+                <div class="bg-slide active" 
+                     data-desktop="img/hero1.jpg" 
+                     data-mobile="img/heromobile1.jpg"></div>
+                
+                <!-- Slide 2 -->
+                <div class="bg-slide" 
+                     data-desktop="img/hero2.png" 
+                     data-mobile="img/heromobile2.png"></div>
+                
+                <!-- Slide 3 -->
+                <div class="bg-slide" 
+                     data-desktop="img/hero3.png" 
+                     data-mobile="img/heromobile3.png"></div>
             </div>
+            
+            <!-- Dark Overlay for Better Text Readability -->
             <div class="hero-overlay"></div>
+            
+            <!-- Header with Logo and Navigation -->
             <header class="header">
                 <div class="logo">
                     <span class="name1">Luxe Bali</span>
                     <span class="name2">Men Spa</span>
                 </div>
+                
                 <nav class="navigation">
                     <ul class="navlist">
                         <li><a href="#">Home</a></li>
@@ -39,18 +68,23 @@
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Book Now</a></li>
                     </ul>
+                    
+                    <!-- Mobile Menu Toggle -->
                     <div class="menu-toggle">
                         <div class="hamburger"></div>
                     </div>
                 </nav>
             </header>
+            
+            <!-- Hero Content -->
             <div class="hero-content">
                 <span>Premium Men's Spa Experience</span>
                 <h1>Luxe Bali Men Spa</h1>
                 <p class="slogan">Your luxury spa experience awaits</p>
                 <button class="hero-btn">Book Appointment</button>
             </div>
-            <!-- Wave shape at bottom -->
+            
+            <!-- Wave Decoration at Bottom -->
             <div class="wave-shape">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
                     <path fill="#ffffff" fill-opacity="1" d="M0,128L40,154.7C80,181,160,235,240,250.7C320,267,400,245,480,213.3C560,181,640,139,720,117.3C800,96,880,96,960,117.3C1040,139,1120,181,1200,181.3C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
@@ -58,6 +92,7 @@
             </div>
         </section>
         
+        <!-- About Section -->
         <section class="about">
             <div class="section-header">
                 <i class="fa-brands fa-pagelines"></i>
@@ -68,12 +103,14 @@
             <button class="about-btn">Learn More</button>
         </section>
 
+        <!-- Services Section -->
         <section class="services">
             <div class="section-header">
                 <h2>Our Services</h2>
                 <div class="underline"></div>
             </div>
             <div class="services-container">
+                <!-- Service Card 1 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-spa"></i>
@@ -85,6 +122,7 @@
                     <button class="service-btn">Book Now</button>
                 </div>
                 
+                <!-- Service Card 2 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-hot-tub"></i>
@@ -96,6 +134,7 @@
                     <button class="service-btn">Book Now</button>
                 </div>
                 
+                <!-- Service Card 3 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-leaf"></i>
@@ -109,6 +148,7 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
         <section class="testimonials">
             <div class="section-header">
                 <i class="fas fa-quote-left"></i>
@@ -182,7 +222,7 @@
                     </div>
                 </div>
                 
-                <!-- Navigation Dots -->
+                <!-- Testimonial Navigation Dots -->
                 <div class="testimonial-dots">
                     <span class="dot active" data-index="0"></span>
                     <span class="dot" data-index="1"></span>

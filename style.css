@@ -1,735 +1,816 @@
+/* CSS Variables for Easy Theme Management */
 :root {
-    --color1: #63464b;
-    --color2: #a99492;
-    --color3: #ffffff;
-    --color4: #cfc9c9;
+    /* Color Palette */
+    --color1: #63464b; /* Primary dark color */
+    --color2: #a99492; /* Secondary accent color */
+    --color3: #ffffff; /* White */
+    --color4: #cfc9c9; /* Light gray */
+    
+    /* Font Families */
     --font-poppins: 'Poppins', sans-serif;
     --font-playfair: 'Playfair Display', serif;
 }
 
+/* Global Reset and Base Styles */
 * {
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    list-style: none; /* Remove default list styling */
+    text-decoration: none; /* Remove underline from links */
+    box-sizing: border-box; /* Include padding in width calculations */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
 }
 
+/* Body Styles */
 body {
-    font-family: var(--font-poppins);
-    background-color: var(--color3);
-    color: var(--color1);
-    overflow-x: hidden;
+    font-family: var(--font-poppins); /* Default font */
+    background-color: var(--color3); /* White background */
+    color: var(--color1); /* Primary text color */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Main Content Container */
 .main {
-    overflow-x: hidden;
+    overflow-x: hidden; /* Ensure no horizontal scroll */
 }
 
-/* Hero Section */
+/* ===== HERO SECTION ===== */
 .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    width: 100%;
-    overflow: hidden;
+    position: relative; /* Positioning context for children */
+    height: 100vh; /* Full viewport height */
+    min-height: 600px; /* Minimum height */
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflow */
 }
 
+/* Hero Background Container */
 .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Position at top */
+    left: 0; /* Position at left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
 }
 
+/* Individual Background Slides */
 .bg-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Position at top */
+    left: 0; /* Position at left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-size: cover; /* Cover entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* No repeating */
+    opacity: 0; /* Start hidden */
+    transition: opacity 1.5s ease-in-out; /* Smooth transition */
 }
 
+/* Active Slide */
 .bg-slide.active {
-    opacity: 1;
+    opacity: 1; /* Show active slide */
 }
 
+/* Hero Overlay for Text Readability */
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Position at top */
+    left: 0; /* Position at left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
 }
 
-/* Header */
+/* ===== HEADER STYLES ===== */
 .header {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+    position: relative; /* Positioning context */
+    z-index: 10; /* Ensure header stays above other elements */
+    display: flex; /* Flex layout */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Center vertically */
+    padding: 20px 40px; /* Padding around content */
 }
 
+/* Logo Styles */
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--color3);
-    font-family: var(--font-poppins);
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
+    font-size: 24px; /* Base font size */
+    font-weight: bold; /* Bold text */
+    color: var(--color3); /* White text */
+    font-family: var(--font-poppins); /* Font family */
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stack elements vertically */
+    line-height: 1.1; /* Tight line spacing */
 }
 
+/* Logo Name Parts */
 .name1 {
-    font-size: 1.2em;
+    font-size: 1.2em; /* Slightly larger */
 }
 
 .name2 {
-    font-size: 0.9em;
-    letter-spacing: 1px;
+    font-size: 0.9em; /* Slightly smaller */
+    letter-spacing: 1px; /* Add spacing between letters */
 }
 
+/* Navigation Container */
 .navigation {
-    display: flex;
-    align-items: center;
-    position: relative;
+    display: flex; /* Flex layout */
+    align-items: center; /* Center vertically */
+    position: relative; /* Positioning context */
 }
 
+/* Navigation List */
 .navlist {
-    display: flex;
-    gap: 30px;
+    display: flex; /* Flex layout */
+    gap: 30px; /* Space between items */
 }
 
+/* Navigation Links */
 .navlist a {
-    color: var(--color3);
-    font-weight: 500;
-    transition: color 0.3s;
-    font-size: 0.95rem;
+    color: var(--color3); /* White text */
+    font-weight: 500; /* Medium weight */
+    transition: color 0.3s; /* Smooth color transition */
+    font-size: 0.95rem; /* Font size */
 }
 
+/* Navigation Link Hover */
 .navlist a:hover {
-    color: var(--color2);
+    color: var(--color2); /* Accent color on hover */
 }
 
-/* Mobile Menu Styles */
+/* ===== MOBILE MENU STYLES ===== */
 .menu-toggle {
-    display: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    z-index: 100;
+    display: none; /* Hidden by default */
+    cursor: pointer; /* Pointer cursor */
+    width: 30px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    position: relative; /* Positioning context */
+    z-index: 100; /* High z-index */
 }
 
+/* Hamburger Icon */
 .hamburger {
-    width: 30px;
-    height: 3px;
-    background-color: var(--color3);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 0.3s ease;
+    width: 30px; /* Same as container */
+    height: 3px; /* Thin line */
+    background-color: var(--color3); /* White color */
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Precise centering */
+    transition: all 0.3s ease; /* Smooth transitions */
 }
 
-.hamburger:before,
-.hamburger:after {
-    content: '';
-    width: 30px;
-    height: 3px;
-    background-color: var(--color3);
-    position: absolute;
-    transition: all 0.3s ease;
-}
-
+/* Hamburger Top Line */
 .hamburger:before {
-    top: -8px;
+    content: ''; /* Required for pseudo-element */
+    width: 30px; /* Same width */
+    height: 3px; /* Same height */
+    background-color: var(--color3); /* White color */
+    position: absolute; /* Absolute positioning */
+    transition: all 0.3s ease; /* Smooth transitions */
+    top: -8px; /* Position above center */
 }
 
+/* Hamburger Bottom Line */
 .hamburger:after {
-    top: 8px;
+    content: ''; /* Required for pseudo-element */
+    width: 30px; /* Same width */
+    height: 3px; /* Same height */
+    background-color: var(--color3); /* White color */
+    position: absolute; /* Absolute positioning */
+    transition: all 0.3s ease; /* Smooth transitions */
+    top: 8px; /* Position below center */
 }
 
-/* Active state for hamburger */
+/* Active Hamburger Menu State */
 .menu-toggle.active .hamburger {
-    background-color: transparent;
+    background-color: transparent; /* Hide center line */
 }
 
 .menu-toggle.active .hamburger:before {
-    top: 0;
-    transform: rotate(45deg);
+    top: 0; /* Move to center */
+    transform: rotate(45deg); /* Rotate to form X */
 }
 
 .menu-toggle.active .hamburger:after {
-    top: 0;
-    transform: rotate(-45deg);
+    top: 0; /* Move to center */
+    transform: rotate(-45deg); /* Rotate to form X */
 }
 
-/* Mobile Dropdown Menu */
+/* ===== MOBILE DROPDOWN MENU ===== */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+        display: block; /* Show toggle button */
     }
     
     .navlist {
-        position: absolute;
-        top: 100%;
-        right: 20px;
-        width: 200px;
-        background-color: var(--color1);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        transition: all 0.3s ease;
-        z-index: 90;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        position: absolute; /* Absolute positioning */
+        top: 100%; /* Position below header */
+        right: 20px; /* Align to right */
+        width: 200px; /* Fixed width */
+        background-color: var(--color1); /* Primary color background */
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align left */
+        gap: 0; /* No gap between items */
+        transition: all 0.3s ease; /* Smooth transitions */
+        z-index: 90; /* Below toggle but above content */
+        max-height: 0; /* Start collapsed */
+        overflow: hidden; /* Hide overflow */
+        opacity: 0; /* Start transparent */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     }
     
+    /* Expanded Menu State */
     .navlist.active {
-        max-height: 400px;
-        opacity: 1;
-        padding: 10px 0;
+        max-height: 400px; /* Expand height */
+        opacity: 1; /* Make visible */
+        padding: 10px 0; /* Add padding */
     }
     
+    /* Menu Items */
     .navlist li {
-        width: 100%;
+        width: 100%; /* Full width */
     }
     
+    /* Menu Links */
     .navlist li a {
-        font-size: 1rem;
-        padding: 12px 20px;
-        display: block;
-        width: 100%;
-        transition: background-color 0.3s;
+        font-size: 1rem; /* Base font size */
+        padding: 12px 20px; /* Comfortable padding */
+        display: block; /* Block display */
+        width: 100%; /* Full width */
+        transition: background-color 0.3s; /* Smooth background transition */
     }
     
+    /* Menu Link Hover */
     .navlist li a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1); /* Slight highlight */
     }
 }
 
+/* ===== HERO BUTTON ===== */
 .hero-btn {
-    background-color:transparent;
-    color: var(--color3);
-    border: 1px solid var(--color3);
-    padding: 15px 40px;
-    font-weight: 600;
-    border-radius: 2rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 1.1rem;
-    margin-top: 15px;
+    background-color: transparent;
+    color: var(--color3); /* Primary text color */
+    border: 1px solid var(--color3); /* White border */
+    padding: 15px 40px; /* Comfortable padding */
+    font-weight: 600; /* Bold text */
+    border-radius: 2rem; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s; /* Smooth transitions */
+    font-size: 1.1rem; /* Slightly larger text */
+    margin-top: 15px; /* Space above */
 }
 
+/* Button Hover State */
 .hero-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
-/* Hero Content */
+/* ===== HERO CONTENT ===== */
 .hero-content {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-    text-align: center;
-    color: var(--color3);
-    padding: 0 20px;
+    position: relative; /* Positioning context */
+    z-index: 5; /* Above background */
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stack vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: calc(100vh - 80px); /* Account for header */
+    text-align: center; /* Center text */
+    color: var(--color3); /* White text */
+    padding: 0 20px; /* Horizontal padding */
 }
 
+/* Hero Subtitle */
 .hero-content span {
-    font-size: 18px;
-    margin-bottom: 15px;
-    color: var(--color3);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 300;
+    font-size: 18px; /* Base size */
+    margin-bottom: 15px; /* Space below */
+    color: var(--color3); /* White text */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spaced letters */
+    font-weight: 300; /* Light weight */
 }
 
+/* Hero Main Heading */
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-family: var(--font-playfair);
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 3.5rem; /* Large size */
+    margin-bottom: 20px; /* Space below */
+    font-weight: 700; /* Bold weight */
+    letter-spacing: 1px; /* Slightly spaced letters */
+    font-family: var(--font-playfair); /* Special font */
+    line-height: 1.2; /* Tight line spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for readability */
 }
 
+/* Hero Slogan */
 .hero-content .slogan {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-size: 1.2rem; /* Base size */
+    margin-bottom: 30px; /* Space below */
+    max-width: 600px; /* Limit width */
+    font-weight: 300; /* Light weight */
+    letter-spacing: 0.5px; /* Slightly spaced letters */
 }
 
-/* Wave Bottom Shape */
+/* ===== WAVE SHAPE ===== */
 .wave-shape {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    z-index: 5;
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Position at bottom */
+    left: 0; /* Position at left */
+    width: 100%; /* Full width */
+    height: 120px; /* Fixed height */
+    z-index: 5; /* Above background */
 }
 
+/* SVG Wave */
 .wave-shape svg {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
 }
 
-/* About Section */
+/* ===== ABOUT SECTION ===== */
 .about {
-    padding: 100px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: var(--color3);
+    padding: 100px 20px; /* Comfortable padding */
+    max-width: 1200px; /* Max content width */
+    margin: 0 auto; /* Center horizontally */
+    text-align: center; /* Center text */
+    background-color: var(--color3); /* White background */
 }
 
+/* Section Header */
 .section-header {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stack vertically */
 }
 
+/* About Icon */
 .about i {
-    font-size: 50px;
-    color: var(--color1);
-    margin-bottom: 20px;
+    font-size: 50px; /* Large size */
+    color: var(--color1); /* Primary color */
+    margin-bottom: 20px; /* Space below */
 }
 
+/* About Heading */
 .about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: var(--color1);
-    font-family: var(--font-playfair);
+    font-size: 2.5rem; /* Large size */
+    margin-bottom: 30px; /* Space below */
+    color: var(--color1); /* Primary color */
+    font-family: var(--font-playfair); /* Special font */
 }
 
+/* About Text */
 .about p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    color: var(--color1);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.1rem; /* Base size */
+    line-height: 1.8; /* Comfortable line spacing */
+    margin-bottom: 30px; /* Space below */
+    color: var(--color1); /* Primary color */
+    max-width: 800px; /* Limit width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
 }
 
+/* About Button */
 .about-btn {
-    background-color: var(--color1);
-    color: var(--color3);
-    border: none;
-    padding: 12px 30px;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
+    background-color: var(--color1); /* Primary color */
+    color: var(--color3); /* White text */
+    border: none; /* No border */
+    padding: 12px 30px; /* Comfortable padding */
+    font-weight: 600; /* Bold text */
+    border-radius: 4px; /* Slightly rounded */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s; /* Smooth transitions */
 }
 
+/* About Button Hover */
 .about-btn:hover {
-    background-color: var(--color2);
-    color: var(--color1);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color2); /* Accent color */
+    color: var(--color1); /* Primary text color */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Services Section */
+/* ===== SERVICES SECTION ===== */
 .services {
-    padding: 100px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
+    padding: 100px 20px; /* Comfortable padding */
+    background-color: #f9f9f9; /* Light gray background */
+    text-align: center; /* Center text */
 }
 
+/* Services Icon */
 .section-header i {
-    font-size: 50px;
-    color: var(--color1);
-    margin-bottom: 20px;
+    font-size: 50px; /* Large size */
+    color: var(--color1); /* Primary color */
+    margin-bottom: 20px; /* Space below */
 }
 
+/* Services Heading */
 .section-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: var(--color1);
-    font-family: var(--font-playfair);
-    position: relative;
-    display: inline-block;
+    font-size: 2.5rem; /* Large size */
+    margin-bottom: 15px; /* Space below */
+    color: var(--color1); /* Primary color */
+    font-family: var(--font-playfair); /* Special font */
+    position: relative; /* Positioning context */
+    display: inline-block; /* Inline block */
 }
 
+/* Underline Decoration */
 .underline {
-    height: 3px;
-    width: 80px;
-    background-color: var(--color1);
-    margin: 0 auto 30px;
-    position: relative;
+    height: 3px; /* Thin line */
+    width: 80px; /* Fixed width */
+    background-color: var(--color1); /* Primary color */
+    margin: 0 auto 30px; /* Center with space below */
+    position: relative; /* Positioning context */
 }
 
+/* Services Container */
 .services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex; /* Flex layout */
+    flex-wrap: wrap; /* Wrap items */
+    justify-content: center; /* Center horizontally */
+    gap: 30px; /* Space between items */
+    max-width: 1200px; /* Max content width */
+    margin: 0 auto; /* Center horizontally */
 }
 
+/* Service Card */
 .service-card {
-    background-color: var(--color3);
-    border-radius: 10px;
-    padding: 40px 30px;
-    width: 100%;
-    max-width: 350px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
+    background-color: var(--color3); /* White background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 40px 30px; /* Comfortable padding */
+    width: 100%; /* Full width */
+    max-width: 350px; /* Max card width */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    position: relative; /* Positioning context */
+    overflow: hidden; /* Hide overflow */
 }
 
+/* Service Card Hover */
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Stronger shadow */
 }
 
+/* Service Icon */
 .service-icon {
-    font-size: 50px;
-    color: var(--color1);
-    margin-bottom: 20px;
+    font-size: 50px; /* Large size */
+    color: var(--color1); /* Primary color */
+    margin-bottom: 20px; /* Space below */
 }
 
+/* Service Title */
 .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--color1);
-    font-family: var(--font-playfair);
+    font-size: 1.5rem; /* Medium size */
+    margin-bottom: 15px; /* Space below */
+    color: var(--color1); /* Primary color */
+    font-family: var(--font-playfair); /* Special font */
 }
 
+/* Service Description */
 .service-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    color: var(--color1);
+    font-size: 1rem; /* Base size */
+    line-height: 1.6; /* Comfortable line spacing */
+    margin-bottom: 25px; /* Space below */
+    color: var(--color1); /* Primary color */
 }
 
+/* Service Divider Line */
 .service-line {
-    height: 2px;
-    width: 60px;
-    background-color: var(--color2);
-    margin: 0 auto 20px;
+    height: 2px; /* Thin line */
+    width: 60px; /* Fixed width */
+    background-color: var(--color2); /* Accent color */
+    margin: 0 auto 20px; /* Center with space below */
 }
 
+/* Service Price */
 .service-price {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color1);
-    margin-bottom: 20px;
+    display: block; /* Block display */
+    font-size: 1.5rem; /* Large size */
+    font-weight: 600; /* Bold text */
+    color: var(--color1); /* Primary color */
+    margin-bottom: 20px; /* Space below */
 }
 
+/* Service Button */
 .service-btn {
-    background-color: var(--color1);
-    color: var(--color3);
-    border: none;
-    padding: 12px 30px;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
+    background-color: var(--color1); /* Primary color */
+    color: var(--color3); /* White text */
+    border: none; /* No border */
+    padding: 12px 30px; /* Comfortable padding */
+    font-weight: 600; /* Bold text */
+    border-radius: 4px; /* Slightly rounded */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s; /* Smooth transitions */
 }
 
+/* Service Button Hover */
 .service-btn:hover {
-    background-color: var(--color2);
-    color: var(--color1);
+    background-color: var(--color2); /* Accent color */
+    color: var(--color1); /* Primary text color */
 }
 
-/* Testimonials Section */
+/* ===== TESTIMONIALS SECTION ===== */
 .testimonials {
-    padding: 100px 20px;
-    background-color: var(--color3);
-    text-align: center;
-    position: relative;
+    padding: 100px 20px; /* Comfortable padding */
+    background-color: var(--color3); /* White background */
+    text-align: center; /* Center text */
+    position: relative; /* Positioning context */
 }
 
+/* Testimonial Container */
 .testimonial-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
+    max-width: 1200px; /* Max content width */
+    margin: 0 auto; /* Center horizontally */
+    position: relative; /* Positioning context */
 }
 
+/* Testimonial Slider */
 .testimonial-slider {
-    display: flex;
-    overflow: hidden;
-    margin-bottom: 40px;
+    display: flex; /* Flex layout */
+    overflow: hidden; /* Hide overflow */
+    margin-bottom: 40px; /* Space below */
 }
 
+/* Testimonial Card */
 .testimonial-card {
-    min-width: 100%;
-    transition: transform 0.5s ease;
-    padding: 0 20px;
-    box-sizing: border-box;
+    min-width: 100%; /* Full width */
+    transition: transform 0.5s ease; /* Smooth transition */
+    padding: 0 20px; /* Horizontal padding */
+    box-sizing: border-box; /* Include padding in width */
 }
 
+/* Active Testimonial */
+.testimonial-card.active {
+    display: block; /* Show active */
+}
+
+/* Testimonial Content */
 .testimonial-content {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
+    background-color: #fff; /* White background */
+    padding: 40px; /* Comfortable padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    max-width: 800px; /* Max width */
+    margin: 0 auto; /* Center horizontally */
+    position: relative; /* Positioning context */
 }
 
+/* Quote Mark */
 .testimonial-content::before {
-    content: '\201C';
-    font-family: Georgia, serif;
-    font-size: 60px;
-    color: var(--color2);
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    opacity: 0.3;
+    content: '\201C'; /* Opening quote */
+    font-family: Georgia, serif; /* Classic font */
+    font-size: 60px; /* Very large */
+    color: var(--color2); /* Accent color */
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Position from top */
+    left: 20px; /* Position from left */
+    opacity: 0.3; /* Semi-transparent */
 }
 
+/* Star Rating */
 .rating {
-    color: #FFD700;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+    color: #FFD700; /* Gold color */
+    margin-bottom: 20px; /* Space below */
+    font-size: 1.2rem; /* Base size */
 }
 
+/* Testimonial Text */
 .testimonial-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--color1);
-    margin-bottom: 30px;
-    font-style: italic;
-    position: relative;
+    font-size: 1.1rem; /* Base size */
+    line-height: 1.8; /* Comfortable line spacing */
+    color: var(--color1); /* Primary color */
+    margin-bottom: 30px; /* Space below */
+    font-style: italic; /* Italic text */
+    position: relative; /* Positioning context */
 }
 
+/* Client Info */
 .client-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Flex layout */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
 
+/* Client Image */
 .client-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    border: 2px solid var(--color2);
+    width: 60px; /* Fixed width */
+    height: 60px; /* Fixed height */
+    border-radius: 50%; /* Circular */
+    object-fit: cover; /* Cover container */
+    margin-right: 15px; /* Space to right */
+    border: 2px solid var(--color2); /* Accent border */
 }
 
+/* Client Details */
 .client-details h4 {
-    font-size: 1.1rem;
-    color: var(--color1);
-    margin-bottom: 5px;
-    text-align: left;
+    font-size: 1.1rem; /* Base size */
+    color: var(--color1); /* Primary color */
+    margin-bottom: 5px; /* Small space below */
+    text-align: left; /* Align left */
 }
 
 .client-details span {
-    font-size: 0.9rem;
-    color: var(--color2);
-    text-align: left;
-    display: block;
+    font-size: 0.9rem; /* Smaller size */
+    color: var(--color2); /* Accent color */
+    text-align: left; /* Align left */
+    display: block; /* Block display */
 }
 
+/* Testimonial Navigation Dots */
 .testimonial-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center horizontally */
+    margin-top: 30px; /* Space above */
 }
 
+/* Individual Dot */
 .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--color4);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    width: 12px; /* Fixed width */
+    height: 12px; /* Fixed height */
+    border-radius: 50%; /* Circular */
+    background-color: var(--color4); /* Light gray */
+    margin: 0 5px; /* Space between */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
+/* Active Dot */
 .dot.active {
-    background-color: var(--color1);
+    background-color: var(--color1); /* Primary color */
 }
 
-/* Responsive Styles */
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Large Desktops (1200px and below) */
 @media (max-width: 1200px) {
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 3rem; /* Slightly smaller */
     }
 }
 
+/* Tablets (992px and below) */
 @media (max-width: 992px) {
     .hero {
-        height: 90vh;
-        min-height: 500px;
+        height: 90vh; /* Slightly shorter */
+        min-height: 500px; /* Adjusted min height */
     }
     
     .hero-content h1 {
-        font-size: 2.8rem;
+        font-size: 2.8rem; /* Smaller heading */
     }
     
     .wave-shape {
-        height: 100px;
+        height: 100px; /* Smaller wave */
+    }
+    
+    /* Mobile-specific hero image positioning */
+    .bg-slide {
+        background-position: center 30%; /* Adjust vertical position */
     }
 }
 
+/* Small Tablets (768px and below) */
 @media (max-width: 768px) {
     .header {
-        padding: 15px 20px;
+        padding: 15px 20px; /* Smaller padding */
     }
     
     .logo {
-        font-size: 20px;
+        font-size: 20px; /* Smaller logo */
     }
     
     .hero {
-        height: 85vh;
-        min-height: 450px;
+        height: 85vh; /* Shorter hero */
+        min-height: 450px; /* Smaller min height */
     }
     
     .hero-content {
-        height: calc(85vh - 80px);
+        height: calc(85vh - 80px); /* Adjusted for header */
     }
     
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Smaller heading */
     }
     
     .hero-content span {
-        font-size: 14px;
+        font-size: 14px; /* Smaller subtitle */
     }
     
     .hero-content .slogan {
-        font-size: 1rem;
-        padding: 0 20px;
+        font-size: 1rem; /* Smaller text */
+        padding: 0 20px; /* Horizontal padding */
     }
     
     .about {
-        padding: 80px 20px;
+        padding: 80px 20px; /* Smaller padding */
     }
     
     .about h2 {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller heading */
     }
     
     .wave-shape {
-        height: 80px;
+        height: 80px; /* Smaller wave */
     }
 }
 
+/* Mobile Phones (576px and below) */
 @media (max-width: 576px) {
     .header {
-        padding: 30px;
+        padding: 15px; /* Smaller padding */
     }
     
     .hero {
-        height: 80vh;
-        min-height: 400px;
+        height: 80vh; /* Shorter hero */
+        min-height: 400px; /* Smaller min height */
     }
     
     .hero-content {
-        height: calc(80vh - 80px);
+        height: calc(80vh - 80px); /* Adjusted for header */
     }
     
     .hero-content h1 {
-        font-size: 2rem;
-        margin-bottom: 15px;
+        font-size: 2rem; /* Smaller heading */
+        margin-bottom: 15px; /* Smaller space */
     }
     
     .hero-content span {
-        font-size: 12px;
-        margin-bottom: 10px;
+        font-size: 12px; /* Smaller subtitle */
+        margin-bottom: 10px; /* Smaller space */
     }
     
     .hero-btn {
-        padding: 12px 30px;
-        font-size: 1rem;
+        padding: 12px 30px; /* Smaller button */
+        font-size: 1rem; /* Smaller text */
     }
     
     .about {
-        padding: 60px 15px;
+        padding: 60px 15px; /* Smaller padding */
     }
     
     .about h2 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
+        font-size: 1.8rem; /* Smaller heading */
+        margin-bottom: 20px; /* Smaller space */
     }
     
     .about p {
-        font-size: 1rem;
-        margin-bottom: 20px;
+        font-size: 1rem; /* Smaller text */
+        margin-bottom: 20px; /* Smaller space */
     }
     
     .wave-shape {
-        height: 60px;
+        height: 60px; /* Smaller wave */
     }
 }
 
+/* Small Mobile Phones (400px and below) */
 @media (max-width: 400px) {
     .hero {
-        height: 75vh;
-        min-height: 350px;
+        height: 75vh; /* Shortest hero */
+        min-height: 350px; /* Smallest min height */
     }
     
     .hero-content {
-        height: calc(75vh - 80px);
+        height: calc(75vh - 80px); /* Adjusted for header */
     }
     
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Smallest heading */
     }
     
     .hero-content .slogan {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Smallest text */
     }
     
     .about h2 {
-        font-size: 1.6rem;
+        font-size: 1.6rem; /* Smallest heading */
     }
     
     .about-btn {
-        padding: 10px 25px;
+        padding: 10px 25px; /* Smallest button */
     }
     
     .wave-shape {
-        height: 50px;
+        height: 50px; /* Smallest wave */
     }
 }
 
+/* Landscape Orientation for Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero {
-        height: auto;
-        min-height: 100vh;
+        height: auto; /* Auto height */
+        min-height: 100vh; /* Full viewport */
     }
     
     .hero-content {
-        padding: 100px 20px;
-        height: auto;
+        padding: 100px 20px; /* Adjusted padding */
+        height: auto; /* Auto height */
     }
     
     .header {
-        padding: 15px 20px;
+        padding: 15px 20px; /* Standard padding */
     }
     
     .wave-shape {
-        height: 60px;
+        height: 60px; /* Adjusted wave */
     }
 }
