@@ -303,3 +303,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update backgrounds on resize
     window.addEventListener('resize', setResponsiveBackgrounds);
 });
+
+
+
+// Add to your script.js (before the closing } of the DOMContentLoaded event)
+// Update copyright year automatically
+document.getElementById('year').textContent = new Date().getFullYear();
