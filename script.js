@@ -33,6 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const mobileImg = servicesSlide.getAttribute('data-mobile');
             servicesSlide.style.backgroundImage = `url(${isMobile ? mobileImg : desktopImg})`;
         }
+        // Contact page slide
+        const contactSlide = document.querySelector('.contact-hero-bg .bg-slide');
+        if (contactSlide) {
+            const desktopImg = contactSlide.getAttribute('data-desktop');
+            const mobileImg = contactSlide.getAttribute('data-mobile');
+            contactSlide.style.backgroundImage = `url(${isMobile ? mobileImg : desktopImg})`;
+        }
     }
 
     // Initialize slideshow
@@ -343,3 +350,65 @@ document.addEventListener('DOMContentLoaded', function() {
         yearElement.textContent = new Date().getFullYear();
     }
 });
+
+
+
+
+ // Contact Form Submission
+        // Show a custom thank you message after Formspree submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    form.innerHTML = '<div class="form-success">Thank you for contacting us! We will get back to you soon.</div>';
+                } else {
+                    form.innerHTML = '<div class="form-error">Sorry, there was a problem sending your message. Please try again later.</div>';
+                }
+            }).catch(() => {
+                form.innerHTML = '<div class="form-error">Sorry, there was a problem sending your message. Please try again later.</div>';
+            });
+        });
+    }
+});
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle the answer
+                answer.classList.toggle('active');
+                
+                // Toggle the icon
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+                
+                // Close other open answers
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        const otherAnswer = otherQuestion.nextElementSibling;
+                        const otherIcon = otherQuestion.querySelector('i');
+                        
+                        otherAnswer.classList.remove('active');
+                        otherIcon.classList.remove('fa-chevron-up');
+                        otherIcon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
