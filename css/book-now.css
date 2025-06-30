@@ -680,6 +680,10 @@
     .payment-options {
         flex-direction: column;
     }
+    .therapist-option label{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 
