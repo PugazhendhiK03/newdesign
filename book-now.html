@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>Book Now - Luxe Bali Male Spa</title>
+    <meta name="description" content="Book your premium men's spa experience at Luxe Bali Male Spa">
+    <meta name="author" content="Luxe Bali Male Spa">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Book Now - Luxe Bali Male Spa">
+    <meta property="og:description" content="Book your premium men's spa experience at Luxe Bali Male Spa">
+    <meta property="og:type" content="website">
+    
+    <!-- Font Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/book-now.css">
+    
+    <!-- iOS Web App Capabilities -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- HTML2Canvas for receipt generation -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="booking-hero">
+            <!-- Hero Background -->
+            <div class="booking-hero-bg">
+                <div class="bg-slide active" 
+                     data-desktop="img/hero1.jpg" 
+                     data-mobile="img/heromobile1.jpg"></div>
+            </div>
+            
+            <!-- Dark Overlay for Better Text Readability -->
+            <div class="booking-hero-overlay"></div>
+            
+            <!-- Header with Logo and Navigation -->
+            <header class="header">
+                <div class="logo">
+                    <span class="name1">Luxe Bali</span>
+                    <span class="name2">Male Spa</span>
+                </div>
+                
+                <nav class="navigation">
+                    <ul class="navlist">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="book-now.html" class="active">Book Now</a></li>
+                    </ul>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <div class="menu-toggle">
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            
+            <!-- Hero Content -->
+            <div class="booking-hero-content">
+                <span>Schedule Your Relaxation</span>
+                <h1>Book Your Appointment</h1>
+                <p class="slogan">Reserve your premium spa experience today</p>
+            </div>
+            
+            <!-- Wave Decoration at Bottom -->
+            <div class="wave-shape">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,128L40,154.7C80,181,160,235,240,250.7C320,267,400,245,480,213.3C560,181,640,139,720,117.3C800,96,880,96,960,117.3C1040,139,1120,181,1200,181.3C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+                </svg>
+            </div>
+        </section>
+        
+        <!-- Booking Form Section -->
+        <section class="booking-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="subtitle">Reservation Process</span>
+                    <h2>Book Your Spa Experience</h2>
+                    <div class="underline"></div>
+                    <p>Fill out the form below to schedule your appointment. Our team will confirm your booking shortly.</p>
+                </div>
+                
+                <div class="booking-container">
+                    <form id="bookingForm" class="booking-form" action="https://formspree.io/f/mrgnygog" method="POST">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="specialRequests">Special Requests</label>
+                                    <textarea id="specialRequests" name="specialRequests" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Service Selection -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Select Services</h3>
+                            <p class="form-section-description">Choose one or more services for your appointment</p>
+                            
+                            <div class="services-selection">
+                                <div class="service-option">
+                                    <input type="checkbox" id="service1" name="services" value="Signature Massage - $120" data-price="120">
+                                    <label for="service1">
+                                        <div class="service-info">
+                                            <h4>Signature Massage</h4>
+                                            <p>60 minutes of deep relaxation combining Balinese and Swedish techniques</p>
+                                            <div class="service-meta">
+                                                <span class="price">$120</span>
+                                                <span class="duration"><i class="fas fa-clock"></i> 60 mins</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="service-option">
+                                    <input type="checkbox" id="service2" name="services" value="Hot Stone Therapy - $150" data-price="150">
+                                    <label for="service2">
+                                        <div class="service-info">
+                                            <h4>Hot Stone Therapy</h4>
+                                            <p>75 minutes of heated volcanic stones melting away tension</p>
+                                            <div class="service-meta">
+                                                <span class="price">$150</span>
+                                                <span class="duration"><i class="fas fa-clock"></i> 75 mins</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="service-option">
+                                    <input type="checkbox" id="service3" name="services" value="Detox Facial - $90" data-price="90">
+                                    <label for="service3">
+                                        <div class="service-info">
+                                            <h4>Detox Facial</h4>
+                                            <p>45 minutes of deep cleansing with natural ingredients</p>
+                                            <div class="service-meta">
+                                                <span class="price">$90</span>
+                                                <span class="duration"><i class="fas fa-clock"></i> 45 mins</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="service-option">
+                                    <input type="checkbox" id="service4" name="services" value="Aromatherapy Massage - $110" data-price="110">
+                                    <label for="service4">
+                                        <div class="service-info">
+                                            <h4>Aromatherapy Massage</h4>
+                                            <p>60 minutes of soothing massage with essential oils</p>
+                                            <div class="service-meta">
+                                                <span class="price">$110</span>
+                                                <span class="duration"><i class="fas fa-clock"></i> 60 mins</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="service-option">
+                                    <input type="checkbox" id="service5" name="services" value="Body Scrub - $95" data-price="95">
+                                    <label for="service5">
+                                        <div class="service-info">
+                                            <h4>Body Scrub</h4>
+                                            <p>45 minutes of exfoliation with natural sea salts</p>
+                                            <div class="service-meta">
+                                                <span class="price">$95</span>
+                                                <span class="duration"><i class="fas fa-clock"></i> 45 mins</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="service-option">
+                                    <input type="checkbox" id="service6" name="services" value="Anti-Aging Facial - $130" data-price="130">
+                                    <label for="service6">
+                                        <div class="service-info">
+                                            <h4>Anti-Aging Facial</h4>
+                                            <p>60 minutes of targeted treatment to reduce fine lines</p>
+                                            <div class="service-meta">
+                                                <span class="price">$130</span>
+                                                <span class="duration"><i class="fas fa-clock"></i> 60 mins</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="total-price">
+                                <span>Total:</span>
+                                <span id="totalAmount">$0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Therapist Selection -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Select Your Therapist</h3>
+                            <p class="form-section-description">Choose your preferred therapist (optional)</p>
+                            
+                            <div class="therapists-selection">
+                                <div class="therapist-option">
+                                    <input type="radio" id="therapist1" name="therapist" value="Adi Putra">
+                                    <label for="therapist1">
+                                        <div class="therapist-image">
+                                            <img src="img/team1.jpg" alt="Adi Putra">
+                                        </div>
+                                        <div class="therapist-info">
+                                            <h4>Adi Putra</h4>
+                                            <div class="rating">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>4.7 (142 reviews)</span>
+                                                </div>
+                                            </div>
+                                            <p>Specializes in deep tissue and sports massage with 12 years experience</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="therapist-option">
+                                    <input type="radio" id="therapist2" name="therapist" value="Ketut Wijaya">
+                                    <label for="therapist2">
+                                        <div class="therapist-image">
+                                            <img src="img/team2.jpg" alt="Ketut Wijaya">
+                                        </div>
+                                        <div class="therapist-info">
+                                            <h4>Ketut Wijaya</h4>
+                                            <div class="rating">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>5.0 (98 reviews)</span>
+                                                </div>
+                                            </div>
+                                            <p>Aromatherapy specialist with background in herbal medicine</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="therapist-option">
+                                    <input type="radio" id="therapist3" name="therapist" value="Made Surya">
+                                    <label for="therapist3">
+                                        <div class="therapist-image">
+                                            <img src="img/team3.jpg" alt="Made Surya">
+                                        </div>
+                                        <div class="therapist-info">
+                                            <h4>Made Surya</h4>
+                                            <div class="rating">
+                                                <div class="stars">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star-half-alt"></i>
+                                                    <span>4.5 (87 reviews)</span>
+                                                </div>
+                                            </div>
+                                            <p>Skincare expert combining modern techniques with traditional rituals</p>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="therapist-option">
+                                    <input type="radio" id="therapist4" name="therapist" value="No Preference" checked>
+                                    <label for="therapist4">
+                                        <div class="therapist-image">
+                                            <i class="fas fa-random"></i>
+                                        </div>
+                                        <div class="therapist-info">
+                                            <h4>No Preference</h4>
+                                            <p>We'll assign the best available therapist for your selected services</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Date & Time Selection -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Select Date & Time</h3>
+                            <p class="form-section-description">Choose your preferred appointment time</p>
+                            
+                            <div class="datetime-selection">
+                                <div class="form-group">
+                                    <label for="appointmentDate">Date <span class="required">*</span></label>
+                                    <input type="date" id="appointmentDate" name="appointmentDate" required min="">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="appointmentTime">Time <span class="required">*</span></label>
+                                    <select id="appointmentTime" name="appointmentTime" required>
+                                        <option value="" disabled selected>Select a time</option>
+                                        <option value="09:00 AM">09:00 AM</option>
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="11:00 AM">11:00 AM</option>
+                                        <option value="12:00 PM">12:00 PM</option>
+                                        <option value="01:00 PM">01:00 PM</option>
+                                        <option value="02:00 PM">02:00 PM</option>
+                                        <option value="03:00 PM">03:00 PM</option>
+                                        <option value="04:00 PM">04:00 PM</option>
+                                        <option value="05:00 PM">05:00 PM</option>
+                                        <option value="06:00 PM">06:00 PM</option>
+                                        <option value="07:00 PM">07:00 PM</option>
+                                        <option value="08:00 PM">08:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Information -->
+                        <div class="form-section">
+                            <h3 class="form-section-title">Payment Information</h3>
+                            <p class="form-section-description">Payment will be collected at the spa after your service</p>
+                            
+                            <div class="payment-options">
+                                <div class="payment-option">
+                                    <input type="radio" id="paymentCash" name="paymentMethod" value="Cash" checked>
+                                    <label for="paymentCash">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <span>Pay with Cash</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="payment-option">
+                                    <input type="radio" id="paymentCard" name="paymentMethod" value="Credit/Debit Card">
+                                    <label for="paymentCard">
+                                        <i class="fas fa-credit-card"></i>
+                                        <span>Pay with Card</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group terms-checkbox">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Cancellation Policy</a> <span class="required">*</span></label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">Complete Booking</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Footer Top Section -->
+                <div class="footer-top">
+                    <!-- Footer Logo and Description -->
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <span class="name1">Luxe Bali</span>
+                            <span class="name2">Men Spa</span>
+                        </div>
+                        <p class="footer-description">Your premier destination for luxury men's spa experiences in Bali. We specialize in tailored treatments that rejuvenate both body and mind.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-links">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="book-now.html">Book Now</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Services Links -->
+                    <div class="footer-links">
+                        <h3 class="footer-heading">Our Services</h3>
+                        <ul>
+                            <li><a href="services.html">Signature Massage</a></li>
+                            <li><a href="services.html">Hot Stone Therapy</a></li>
+                            <li><a href="services.html">Detox Facial</a></li>
+                            <li><a href="services.html">Aromatherapy</a></li>
+                            <li><a href="services.html">Body Treatments</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="footer-contact">
+                        <h3 class="footer-heading">Contact Us</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Spa Street, Seminyak, Bali 80361</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+62 361 123 4567</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@luxebalimalspa.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Open Daily: 9:00 AM - 9:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom Section -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        &copy; <span id="year"></span> Luxe Bali Male Spa. All Rights Reserved.
+                    </div>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Booking Receipt Modal -->
+    <div class="modal-overlay" id="receiptModal">
+        <div class="modal-container">
+            <button class="close-modal">&times;</button>
+            <div class="modal-content featured">
+                <div class="receipt-container" id="bookingReceipt">
+                    <div class="receipt-header">
+                        <div class="logo">
+                            <span class="name1">Luxe Bali</span>
+                            <span class="name2">Male Spa</span>
+                        </div>
+                        <div class="receipt-title">Booking Confirmation</div>
+                        <div class="receipt-date" id="receiptDate"></div>
+                    </div>
+                    
+                    <div class="receipt-body">
+                        <div class="receipt-section">
+                            <h4>Customer Information</h4>
+                            <div class="receipt-row">
+                                <span class="label">Name:</span>
+                                <span class="value" id="receiptName"></span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="label">Email:</span>
+                                <span class="value" id="receiptEmail"></span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="label">Phone:</span>
+                                <span class="value" id="receiptPhone"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="receipt-section">
+                            <h4>Appointment Details</h4>
+                            <div class="receipt-row">
+                                <span class="label">Date:</span>
+                                <span class="value" id="receiptAppointmentDate"></span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="label">Time:</span>
+                                <span class="value" id="receiptAppointmentTime"></span>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="label">Therapist:</span>
+                                <span class="value" id="receiptTherapist"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="receipt-section">
+                            <h4>Services Booked</h4>
+                            <div class="receipt-services" id="receiptServices"></div>
+                        </div>
+                        
+                        <div class="receipt-section">
+                            <div class="receipt-row total-row">
+                                <span class="label">Total Amount:</span>
+                                <span class="value" id="receiptTotalAmount"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="receipt-section">
+                            <h4>Special Requests</h4>
+                            <div class="receipt-requests" id="receiptRequests"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="receipt-footer">
+                        <p>Thank you for booking with Luxe Bali Male Spa!</p>
+                        <p>Please arrive 15 minutes before your appointment time.</p>
+                        <div class="receipt-barcode">
+                            <div class="barcode"></div>
+                            <div class="barcode-number">LBMS-<span id="receiptBarcode"></span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="receipt-actions">
+                    <button id="downloadReceipt" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Receipt
+                    </button>
+                    <button id="shareWhatsApp" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Share via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set minimum date for appointment (today)
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            const minDate = yyyy + '-' + mm + '-' + dd;
+            document.getElementById('appointmentDate').min = minDate;
+            
+            // Calculate total price when services are selected
+            const serviceCheckboxes = document.querySelectorAll('.service-option input[type="checkbox"]');
+            const totalAmountElement = document.getElementById('totalAmount');
+            
+            serviceCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', calculateTotal);
+            });
+            
+            function calculateTotal() {
+                let total = 0;
+                serviceCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        total += parseFloat(checkbox.dataset.price);
+                    }
+                });
+                totalAmountElement.textContent = '$' + total.toFixed(2);
+            }
+            
+            // Form submission
+            const bookingForm = document.getElementById('bookingForm');
+            const receiptModal = document.getElementById('receiptModal');
+            
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const formData = new FormData(bookingForm);
+                const formValues = Object.fromEntries(formData.entries());
+                
+                // Generate random booking reference
+                const bookingRef = Math.floor(100000 + Math.random() * 900000);
+                
+                // Populate receipt
+                document.getElementById('receiptName').textContent = formValues.fullName;
+                document.getElementById('receiptEmail').textContent = formValues.email;
+                document.getElementById('receiptPhone').textContent = formValues.phone;
+                document.getElementById('receiptAppointmentDate').textContent = formValues.appointmentDate;
+                document.getElementById('receiptAppointmentTime').textContent = formValues.appointmentTime;
+                document.getElementById('receiptTherapist').textContent = formValues.therapist || 'No Preference';
+                document.getElementById('receiptTotalAmount').textContent = totalAmountElement.textContent;
+                document.getElementById('receiptRequests').textContent = formValues.specialRequests || 'None';
+                document.getElementById('receiptBarcode').textContent = bookingRef;
+                
+                // Current date for receipt
+                const now = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                document.getElementById('receiptDate').textContent = now.toLocaleDateString('en-US', options);
+                
+                // Populate services
+                const servicesContainer = document.getElementById('receiptServices');
+                servicesContainer.innerHTML = '';
+                
+                const services = formData.getAll('services');
+                services.forEach(service => {
+                    const serviceElement = document.createElement('div');
+                    serviceElement.className = 'receipt-service';
+                    serviceElement.textContent = service;
+                    servicesContainer.appendChild(serviceElement);
+                });
+                
+                // Show receipt modal
+                receiptModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Submit form data to Formspree (hidden from customer)
+                fetch(bookingForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (!response.ok) {
+                        console.error('Form submission error');
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+            
+            // Download receipt as image
+            document.getElementById('downloadReceipt').addEventListener('click', function() {
+                const receiptElement = document.getElementById('bookingReceipt');
+                
+                html2canvas(receiptElement, {
+                    scale: 2,
+                    logging: false,
+                    useCORS: true
+                }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = 'luxe-bali-booking-receipt.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                });
+            });
+            
+            // Share via WhatsApp
+            document.getElementById('shareWhatsApp').addEventListener('click', function() {
+                const name = document.getElementById('receiptName').textContent;
+                const date = document.getElementById('receiptAppointmentDate').textContent;
+                const time = document.getElementById('receiptAppointmentTime').textContent;
+                const services = Array.from(document.querySelectorAll('.receipt-service')).map(el => el.textContent).join('\n- ');
+                const total = document.getElementById('receiptTotalAmount').textContent;
+                const ref = document.getElementById('receiptBarcode').textContent;
+                
+                const message = `*Luxe Bali Male Spa Booking Confirmation*\n\n` +
+                                `*Customer:* ${name}\n` +
+                                `*Appointment:* ${date} at ${time}\n` +
+                                `*Services:*\n- ${services}\n` +
+                                `*Total:* ${total}\n` +
+                                `*Reference:* LBMS-${ref}\n\n` +
+                                `Please present this confirmation upon arrival.`;
+                
+                const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+            
+            // Close modal
+            const closeModal = document.querySelector('.close-modal');
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    receiptModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+            
+            // Close modal when clicking outside
+            receiptModal.addEventListener('click', function(e) {
+                if (e.target === receiptModal) {
+                    receiptModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close modal with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && receiptModal.classList.contains('active')) {
+                    receiptModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

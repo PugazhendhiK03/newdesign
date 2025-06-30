@@ -1,0 +1,685 @@
+/* ===== BOOKING HERO SECTION ===== */
+.booking-hero {
+    position: relative;
+    height: 90dvh;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.booking-hero-bg .bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.booking-hero-bg .bg-slide.active {
+    opacity: 1;
+}
+
+.booking-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.booking-hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 80px 20px 0;
+    height: 100vh;
+    min-height: 600px;
+    bottom: 2rem;
+}
+
+.booking-hero-content span {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.booking-hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.booking-hero-content .slogan {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.wave-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    z-index: 5;
+}
+
+.wave-shape svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== HEADER STYLES FOR BOOKING PAGE ===== */
+.booking-hero .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    z-index: 1000;
+    transition: var(--transition-normal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-hero .header.scrolled {
+    background-color: rgba(42, 42, 42, 0.95);
+    box-shadow: var(--shadow-md);
+    padding: 1rem 2rem;
+}
+
+/* ===== BOOKING SECTION ===== */
+.booking-section {
+    padding: 6rem 1.5rem;
+    background-color: var(--white);
+}
+
+.booking-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.booking-form {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+}
+
+.form-section-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.form-section-description {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.required {
+    color: var(--accent-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(234, 186, 28, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Services Selection */
+.services-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.service-option {
+    position: relative;
+}
+
+.service-option input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.service-option label {
+    display: block;
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.service-option input[type="checkbox"]:checked + label {
+    background-color: rgba(234, 186, 28, 0.1);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 1px var(--secondary-color);
+}
+
+.service-option label:hover {
+    background-color: rgba(234, 186, 28, 0.05);
+}
+
+.service-info h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.service-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.service-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-meta .price {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.service-meta .duration {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    background-color: var(--light-color);
+    border-radius: var(--radius-md);
+}
+
+/* Therapists Selection */
+.therapists-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.therapist-option {
+    position: relative;
+}
+
+.therapist-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.therapist-option label {
+    display: flex;
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.therapist-option input[type="radio"]:checked + label {
+    background-color: rgba(234, 186, 28, 0.1);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 1px var(--secondary-color);
+}
+
+.therapist-option label:hover {
+    background-color: rgba(234, 186, 28, 0.05);
+}
+
+.therapist-image {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-circle);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.therapist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.therapist-image i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    background-color: rgba(234, 186, 28, 0.1);
+}
+
+.therapist-info {
+    flex-grow: 1;
+}
+
+.therapist-info h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.therapist-info .rating {
+    margin-bottom: 0.5rem;
+}
+
+.stars {
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.stars span {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.therapist-info p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Date & Time Selection */
+.datetime-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Payment Options */
+.payment-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.payment-option {
+    position: relative;
+    flex: 1;
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.payment-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    height: 100%;
+    gap: 0.5rem;
+}
+
+.payment-option input[type="radio"]:checked + label {
+    background-color: rgba(234, 186, 28, 0.1);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 1px var(--secondary-color);
+}
+
+.payment-option label i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.payment-option label span {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Terms Checkbox */
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.terms-checkbox label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+.terms-checkbox label a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Form Submit */
+.form-submit {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.form-submit button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Receipt Modal */
+.receipt-container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.receipt-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.receipt-header .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.receipt-header .logo .name1 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.receipt-header .logo .name2 {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+}
+
+.receipt-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0 0.5rem;
+}
+
+.receipt-date {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.receipt-body {
+    margin-bottom: 2rem;
+}
+
+.receipt-section {
+    margin-bottom: 1.5rem;
+}
+
+.receipt-section h4 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 0.5rem;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.receipt-row .label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.receipt-row .value {
+    color: var(--primary-color);
+    text-align: right;
+}
+
+.receipt-row.total-row {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--gray);
+}
+
+.receipt-row.total-row .value {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.receipt-services {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.receipt-service {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--gray);
+    color: var(--text-color);
+}
+
+.receipt-requests {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.receipt-footer {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 2px solid var(--secondary-color);
+}
+
+.receipt-footer p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.receipt-barcode {
+    margin-top: 1.5rem;
+}
+
+.barcode {
+    height: 50px;
+    background: linear-gradient(90deg, #000 0%, #000 10%, #fff 10%, #fff 20%, #000 20%, #000 30%, #fff 30%, #fff 40%, #000 40%, #000 50%, #fff 50%, #fff 60%, #000 60%, #000 70%, #fff 70%, #fff 80%, #000 80%, #000 90%, #fff 90%, #fff 100%);
+    margin-bottom: 0.5rem;
+}
+
+.barcode-number {
+    font-family: monospace;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+}
+
+.receipt-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: var(--white);
+}
+
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+}
+
+.featured{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .booking-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .booking-hero-content .slogan {
+        font-size: 1.1rem;
+    }
+    
+    .booking-form {
+        padding: 1.5rem;
+    }
+    
+    .receipt-actions {
+        flex-direction: column;
+    }
+    
+    .receipt-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .booking-hero {
+        height: 60dvh;
+    }
+    
+    .booking-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .booking-hero-content span {
+        font-size: 0.875rem;
+    }
+    
+    .services-selection,
+    .therapists-selection {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-options {
+        flex-direction: column;
+    }
+}
+
+
