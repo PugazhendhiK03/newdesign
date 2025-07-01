@@ -40,6 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const mobileImg = contactSlide.getAttribute('data-mobile');
             contactSlide.style.backgroundImage = `url(${isMobile ? mobileImg : desktopImg})`;
         }
+        // Booking page slide
+        const bookingSlide = document.querySelector('.booking-hero-bg .bg-slide');
+        if (bookingSlide) {
+            const desktopImg = bookingSlide.getAttribute('data-desktop');
+            const mobileImg = bookingSlide.getAttribute('data-mobile');
+            bookingSlide.style.backgroundImage = `url(${window.innerWidth <= 992 ? mobileImg : desktopImg})`;
+        }
     }
 
     // Initialize slideshow
